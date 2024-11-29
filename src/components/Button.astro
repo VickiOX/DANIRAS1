@@ -1,7 +1,24 @@
 ---
+const { variant = "primary", size = "medium" } = Astro.props;
+
+const buttonStyling = "text-grey-300";
+
+const variantClasses = {
+  primary:
+    "bg-yellow-200 hover:bg-yellow-100 transition duration-300 ease-in-out drop-shadow-lg border border-yellow-200 hover:border-yellow-100 s",
+
+  secondary:
+    "bg-grey-300 text-white hover:bg-grey-200 transition duration-300 ease-in-out drop-shadow-lg border border-grey-100",
+};
+
+const sizeClasses = {
+  large: "px-14 py-3 text-xl",
+  medium: "px-10 py-2 text-lg",
+  small: "px-5 py-1 text-md",
+};
 ---
-<div x-data>
-    <button class="border-2 border-black p-2 rounded-md 
-    animate__animated animate__heartBeat animate__infinite" 
-    x-on:click="alert('Godt gået - god arbejdslyst:-)')"><slot /></button>
-</div>
+<button
+  class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}
+>
+  <slot />
+</button>
