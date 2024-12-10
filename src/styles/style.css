@@ -1,0 +1,26 @@
+:root{
+    /*white*/
+    --white:#ffffff;
+    /*blue*/
+    --white-blue:#EDF2F5;
+    --lighter-blue:#DAE5EB;
+    --light-blue:#B6CAD7;
+    --blue:#487B9A;
+    --dark-blue:#13425D;
+    /*brown*/
+    --brown:#291F1E;
+    --dark-brown:#0D0A0A;
+    /*red*/
+    --red:#CF3636;
+    /*green*/
+    --green:#C5D8B0;
+    /*opacity*/
+    --opacity60-dark-brown:#0d0a0a99;
+    --opacity40-dark-brown:#0d0a0a66;
+    --opacity40-dark-blue:#13425D66;
+    --opacity10-dark-blue:#13425D1a;
+    
+}
+
+
+

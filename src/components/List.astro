@@ -1,4 +1,25 @@
 ---
+ const {subheader, text} = Astro.props
 ---
+<div class="p-2">
+ <div class="p-9 md:p-14 box gap-6 md:grid md:grid-cols-2 ">
+    <div><h3>{subheader}</h3></div>
+    <div><p>{text}</p></div>
+ </div>
+</div>
 
-<!-- this is a list component that are being used for the core vaules section -->
+ <style>
+    .box{
+        background-color: var(--brown);
+        color:var(--white);
+        border-radius: 4px;
+    }
+
+    @media screen and (min-width: 480px){
+        .box{
+            border-radius: 8px;
+        }
+    }
+
+    
+ </style>

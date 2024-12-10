@@ -1,10 +1,83 @@
 ---
+import Button from '../components/Button.astro';
 ---
-<div class="pb-6 border-b-2 ">
-header
-<a href=""><img src="" alt=""></a> <!-- kig evt på digital skrald for at se hvordan billede link virker -->
 
-<a href=""></a>
-<a href=""></a>
-<a href=""></a>
+<div x-data="{ showmenu: false }" class="sticky md:static w-full z-50 border ">
+
+  <div id="navbar" class="flex flex-row justify-between ">
+    <a href="/">
+      <div id="logo" class="h-[40px] w-[44px] bg-[url('/img/logo.webp')] bg-cover m-9"></div>
+    </a>
+
+    <nav id="desktopmenu" class="hidden md:block">
+      <ul class="flex flex-row gap-9 items-baseline m-9 ">
+
+        <li class="link "><a href="/#">Our Services</a></li>
+
+        <li class="link"><a href="#">Cases</a></li>
+
+        <li class="link"><a href="#">About Us</a></li>
+        <li><a href="#">
+          <Button variant="primary" size="small">Contact</Button> 
+        </a></li>
+      </ul>
+    </nav>
+
+    <button id="burgermenu" class="md:hidden" x-on:click="showmenu = !showmenu">
+      <svg x-show="!showmenu" class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg x-show="showmenu" class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <nav id="mobilmenu" class="flex flex-col content-center pt-4 md:hidden h-screen" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
+    <ul class="pt-9 pl-18 ">
+
+      <li class="link"><a href="#">Our Services</a></li>
+
+      <li class="link pt-9"><a href="#">Cases</a></li>
+
+      <li class="link pt-9"><a href="#">About Us</a></li>
+     
+      <li class="link pt-9"><a href="#">Career</a></li>
+
+      <li class="link pt-9"><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 </div>
+
+
+
+
+  
+
+<style>
+.border{
+  border-bottom: 1px solid var(--opacity40-dark-blue);
+}
+.link:hover{
+    border-bottom: 1px solid var(--dark-brown);
+    transition: 0.15s;
+}
+
+</style>
+
+<script>
+     import { animate, inView, scroll } from "motion";
+
+//fadeInLeft
+//________________________
+//section 3
+const fadeIn1 = document.querySelector(".fadeIn1");
+
+inView(fadeIn1, () => {
+  fadeIn1.classList.add(
+    "animate__animated",
+    "animate__fadeIn",
+    "animate__delay-1s"
+  );
+});
+</script>

@@ -1,0 +1,22 @@
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+  }
+
+  .number {
+    transition: --num 5s;
+    counter-set: num var(--num);
+    font: 800 40px system-ui;
+  }
+  .number::after {
+    content: counter(num);
+  }
+  .number:hover {
+    --num: 100;
+  }
+
+
+
+
+ 

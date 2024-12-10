@@ -1,22 +1,62 @@
 ---
+import "../styles/style.css"
 const { variant = "primary", size = "medium" } = Astro.props;
 
-const buttonStyling = "text-grey-300";
+const buttonStyling = "text-button";
 
 const variantClasses = {
   primary:
-    "bg-yellow-200 hover:bg-yellow-100 transition duration-300 ease-in-out drop-shadow-lg border border-yellow-200 hover:border-yellow-100 s",
+    "button-primary  transition rounded-full",
 
   secondary:
     "bg-grey-300 text-white hover:bg-grey-200 transition duration-300 ease-in-out drop-shadow-lg border border-grey-100",
 };
 
 const sizeClasses = {
-  large: "px-14 py-3 text-xl",
-  medium: "px-10 py-2 text-lg",
-  small: "px-5 py-1 text-md",
+  large: "px-6 py-8 text-xl",
+  medium: "px-7 py-5 text-lg",
+  small: "px-6 py-4 text-md",
 };
----
+--- 
+
 <button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}>
   <slot />
 </button>
+
+
+
+<style>
+  button{
+    box-shadow: 0px 4px 40px var(--opacity40-dark-blue);
+  }
+
+  button:hover{
+    box-shadow: 0px 8px 40px var(--opacity40-dark-blue);
+  }
+  /*button surface*/
+.button-primary{
+    background-color: var(--dark-brown);
+}
+
+.button-primary:hover{
+  background-color: var(--blue);
+}
+
+.button-secondary{
+    background-color: var(--dark-blue);
+}
+
+.button-tertiary{
+    background-color: var(--red);
+}
+
+.button-quniary{
+    background-color: var(--blue);
+}
+
+/*button text*/
+.text-button{
+    color:var(--white);
+}
+
+</style>

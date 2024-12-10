@@ -1,11 +1,36 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
+import List from '../components/List.astro';
+import Picture from "../components/Picture.astro";
+import Quote from "../components/Quote.astro";
+import Showcase from "../components/Showcase.astro";
+import InfoBox from "../components/InfoBox.astro";
+import Carousel from "../components/Carousel.astro";
+import Hero from "../components/Hero.astro";
+
 ---
 <MainLayout title="DANIRAS">
 	<article class="">
-		<p>indhold</p>
-		<Button variant="primary" size="medium">button</Button>
+		<Hero/>
+		
+		<div class="my-20">
+		<Picture picture="/img/employee.png" alt="big picture" text="Linda, Head of IT"/>
+		</div>
+		<div class="m-14">
+		<List subheader="Headline" text="brødtekst"/>
+		<List subheader="Headline" text="brødtekst"/>
+		<List subheader="Headline" text="brødtekst"/>
+		<List subheader="Headline" text="brødtekst"/>
+		</div>
+
+		<div class="bg-black text-white ">
+		<Quote header="I hope that all young people will have the opportunity to work for a company like Daniras...." subheader="Markus, Student with responsibilities in IT development " text="Learn more about us on ‘About us’ and hear more about Markus, who is a Student with responsibilities in IT, development, and operations, along with other colleagues."/>
+		</div>
+		<Quote header="I hope that all young people will have the opportunity to work for a company like Daniras...." subheader="Markus, Student with responsibilities in IT development " text="Learn more about us on ‘About us’ and hear more about Markus, who is a Student with responsibilities in IT, development, and operations, along with other colleagues."/>
+		<Showcase picture="/img/anycubic.webp" alt="big picture" header="Collaboration with Anycubic Nordic" text="Dive into inspiring stories about our partnership with Anycubic Nordic. Discover how we have created innovative solutions together, delivering quality in 3D printing that makes a difference for both professional and private users in the Nordic market."/>
+		<Carousel/>
+		<InfoBox/>
 	</article>
 </MainLayout>
 <style></style>

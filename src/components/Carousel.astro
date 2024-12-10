@@ -1,4 +1,21 @@
 ---
+import CarouselCard from "./CarouselCard.astro";
+const { imgDescription, img, text} = Astro.props
 ---
 
 <!-- this carousel show other cases -->
+
+<div class="container">
+    <div class="card-wrapper">
+        <ul class="card-list">
+
+            <li class="card-item">
+                <a href="#" class="card-link">
+                    <img src={img} alt={imgDescription} class="card-img">
+                    <p class="describtion">{text}</p>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
