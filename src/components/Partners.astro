@@ -1,4 +1,48 @@
 ---
+export interface ImageProps {
+  viewImagesSet1: string[];
+  viewImagesSet2: string[];
+}
+const { viewImagesSet1, viewImagesSet2 } = Astro.props;
 ---
 
-<!-- this is where the logos from the partners are -->
+<div
+  x-data="{ currentSet: 1 }"
+  x-init="setInterval(() => currentSet = currentSet === 1 ? 2 : 1, 4000)"
+  class="flex flex-col items-center justify-center h-[100px] md:h-[140px] bg-white "
+>
+
+  <div
+    class="relative w-full h-auto px-6 md:px-20"
+  >
+    <!-- Image Set 1 --> 
+    <div
+      x-show="currentSet === 1"
+      class=" inset-0 grid grid-cols-4 gap-10 w-full h-auto opacity-0 transition-opacity duration-[2000ms] ease-in-out"
+      x-bind:class="{ 'opacity-100': currentSet === 1 }"
+    >
+      {viewImagesSet1.map((image, index) => (
+        <img
+          src={image}
+          alt={`Web Image Set 1 - ${index + 1}`}
+          class="h-8 md:h-[40px]  object-center mx-auto"
+        />
+      ))}
+    </div>
+    <!-- Image Set 2 -->
+    <div
+      x-show="currentSet === 2"
+      class=" inset-0 grid grid-cols-4 gap-10 w-full h-auto opacity-0 transition-opacity duration-[2000ms] ease-in-out"
+      x-bind:class="{ 'opacity-100': currentSet === 2 }"
+    >
+      {viewImagesSet2.map((image, index) => (
+        <img
+          src={image}
+          alt={`Web Image Set 2 - ${index + 1}`}
+          class="h-8 md:h-[40px] object-fit mx-auto"
+        />
+      ))}
+    </div>
+  </div>
+
+</div> 

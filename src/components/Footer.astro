@@ -1,39 +1,43 @@
 ---
 import "../styles/style.css"
 ---
-<div class=" md:grid md:grid-cols-2 footer divide-y md:divide-y-0 md:divide-x divide-white  ">
-    <div class="text-sm p-14 ">
-        <a href="/">
-            <div class="bg-[url('/img/logonavn.webp')] h-[18px] w-[112px] bg-cover"></div>
-        </a>
-        <div class="py-12">
+<div class=" md:grid md:grid-cols-2 footer divide-y md:divide-y-0 md:divide-x divide-white font-[DM_Sans] ">
+    <div class="text-sm p-9 ">
+        <div>
+            
+            <a class="flex gap-2" href="/">
+                <img class="w-10 justify-center content-center " src="/img/logo.webp" alt="daniras logo">
+                <div class="bg-[url('/img/logonavn.webp')] h-[18px] w-[112px] bg-cover mt-1 "></div>
+            </a>
+        </div>
+        <div class="py-12  text-xl md:text-base">
             <p>Malervej 6</p>
             <p>2630 Taastrup</p>
             <p>Denmark</p>
             <p>VAT: DK XXXXXXXX</p>
         </div>
        
-        <div class="">
+        <div class=" text-xl md:text-base">
             <p><a href="hello@daniras.com">hello@daniras.com</a></p>
         </div>
         
-        <div class=" flex pt-19 gap-9">
-            <a href="https://www.linkedin.com/company/daniras/">Linkedin</a>
-            <a href="https://www.facebook.com/DanirasDK">Facebook</a>
+        <div class=" flex pt-19 gap-9  text-xl md:text-sm">
+            <a class="link" href="https://www.linkedin.com/company/daniras/">Linkedin</a>
+            <a class="link" href="https://www.facebook.com/DanirasDK">Facebook</a>
         </div>
         
     </div>
 
-    <div class="p-14 relative ">
-        <div class="flex flex-col text-sm  pb-19 md:pb-0 gap-6"> 
-            <a class="w-fit">About Us</a>
-            <a class="w-fit">Our Services</a>
-            <a class="w-fit">Cases</a>
-            <a class="w-fit">Career</a>
-            <a class="w-fit">Contact</a>
+    <div class="p-9 relative  text-xl md:text-base ">
+        <div class="flex flex-col text-sm  pb-19 md:pb-0 gap-9 md:gap-6"> 
+            <a class="link w-fit" href="/aboutus">About Us</a>
+            <a class="link w-fit" href="/ourservices">Our Services</a>
+            <a class="link w-fit" href="/cases">Cases</a>
+            <a class="link w-fit" href="https://daniras.com/job-openings1/index" target="_blank">Career</a>
+            <a class="link w-fit" href="https://daniras.com/contact" target="_blank">Contact</a>
         </div>
     
-      <div class=" text-[12px]   absolute bottom-14 right-14">
+      <div class=" text-[12px]   absolute bottom-9 right-9 text-xs">
         <p class="">@Copyright2024</p>
       </div>
     </div>
@@ -45,7 +49,7 @@ import "../styles/style.css"
         color:var(--white);
     }
 
-    a:hover{
+    .link:hover{
         border-bottom: 1px solid var(--white);
         transition: 0.15s;
     }

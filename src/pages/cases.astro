@@ -1,0 +1,133 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import InfoBox from "../components/InfoBox.astro";
+import Quote from "../components/Quote.astro";
+import Picture from "astro/components/Picture.astro";
+import Carousel from "../components/Carousel.astro";
+import anycubic from "../assets/images/anycubic2.webp";
+
+
+---
+<MainLayout title="DANIRAS | Cases">
+
+<!-- Sektion 1 -->
+
+<section class="border">
+    <ul class="flex my-14 mx-9 md:m-20 gap-2  text-base md:text-sm">
+        <li><a class="link" href="../">Home</a></li>
+        <span>|</span>
+        <li><a class="link" href="/cases">Cases</a></li>
+    </ul>
+
+    <div class="">
+    <div class=" my-14 mx-9 md:m-20">
+    <h1 class="text-5xl md:text-6xl pb-4 font-[Gabarito]">Anycubic Nordic</h1>
+    <p class="md:w-[500px] pb-9 text-base">Provides advanced 3D printers and accessories, focusing on quality and precision for the Nordic market.</p>
+    <img class="w-full h-[400px] md:h-[700px] object-cover" src="/img/anycubic.webp" alt="billede af 3D printer">
+    </div>
+    </div>
+
+</section>
+
+<!-- sektion 2 -->
+
+<InfoBox 
+header="Faster Loading and Unloading"
+header2="New Delivery Routes Implemented"
+header3="Reduction in Order Processing Errors"
+text="Loading and unloading time reduced by 50% through automation."
+text2="75 new delivery routes in the Nordics have reduced distances, costs, and environmental impact."
+text3="Order processing errors reduced by 50% with a new digital system."
+
+/>
+
+
+<!-- sektion 3 -->
+<section class="md:grid md:grid-cols-2 mx-9 my-14 md:m-20">
+<div class="pr-9">
+    <h2 class="text-3xl md:text-4xl pb-4">The Partnership Between DANIRAS and Anycubic</h2>
+    <div class="text-base">
+    <p class=" pb-4">Over the past two years, the partnership between DANIRAS and Anycubic has been instrumental in establishing Anycubic Nordic in the Danish market. Anycubic, a global leader in 3D printing, relied on DANIRAS’ local expertise to navigate the market effectively. Combining global experience with local knowledge, the partnership successfully introduced and established the brand in Denmark.</p>
+    <p class="pb-4">DANIRAS has built an efficient infrastructure to address logistical challenges, ensuring prompt delivery of Anycubic’s products and enhancing its reputation. Their expertise in inventory management, distribution, and local support has been critical to this success.</p>
+    <p>DANIRAS’ deep understanding of the Danish market has also helped adapt Anycubic’s products and services to local needs, ensuring they align with customer expectations and preferences.</p>
+</div>
+</div>
+<div class="pl-9">
+    <h2 class="text-3xl md:text-4xl pb-4">How DANIRAS Has Supported Anycubic</h2>
+    <div class="text-base">
+    <p class="pb-4">DANIRAS has been instrumental in Anycubic’s success in Denmark by providing tailored IT solutions and technical support. Their expertise has enabled Anycubic to build a stable IT infrastructure, optimizing operations from order management to customer service.</p>
+    <p class="pb-4">Through customized systems, DANIRAS improved Anycubic’s order processing and customer support, directly boosting customer satisfaction. Fast and accurate support has strengthened Anycubic's connection with Danish customers.</p>
+    <p>DANIRAS also enhanced Anycubic’s logistics and inventory management, enabling efficient inventory, distribution, and delivery systems. This has reduced costs, ensured reliable product delivery, and helped establish Anycubic as a trusted name in the Danish market.</p>
+    </div>
+</div>
+</section>
+
+<!-- sektion 4 -->
+<div class="bg-black text-white md:p-20">
+    <Quote 
+    header="I hope that all young people will have the opportunity to work for a company like Daniras...." 
+    subheader="Markus, Student with responsibilities in IT development " 
+    text="Learn more about us on ‘About us’ and hear more about Markus, who is a Student with responsibilities in IT, development, and operations, along with other colleagues."
+    link="/aboutus"
+    variant="quniary"
+    />
+    </div>
+
+    <!--sektion 5 -->
+    <section class="m-9 md:m-20 ">
+        <Picture
+            src={anycubic}
+            alt="anycubic nordic"
+            class=" h-[640px] object-cover mx-auto img"
+            />
+            <p class="text-[16px] pt-[10px] md:pl-7 font-[DM_Sans]">Anycubic Warehouse 2024</p>
+        </section>
+
+<!-- sektion 6 -->
+<section class="md:grid md:grid-cols-2 mx-9 my-14 md:m-20">
+    <div class="pr-9">
+        <h2 class="text-3xl md:text-4xl pb-4">Building Anycubic Nordic</h2>
+        <div class="text-base">
+        <p class="pb-4">One of the key achievements in the partnership is the establishment of Anycubic Nordic, a local entity enabling Anycubic's operations across the Nordic region. This milestone, achieved through close collaboration, has provided a strong platform for growth and expansion. With DANIRAS's support, the logistical and administrative systems were streamlined to ensure efficient operations in the Nordic market.</p>
+        <p class="pb-4"> A crucial aspect of Anycubic Nordic’s success is its dedicated customer service team, established with assistance from DANIRAS. This team efficiently handles inquiries, technical support, and other service needs, fostering trust and strong relationships with Danish customers.</p>
+        <p>Optimizing the supply chain has been another vital development. DANIRAS helped improve inventory and distribution systems, enabling faster delivery and better control. This has given Anycubic a competitive edge in Denmark, ensuring a stable, reliable supply chain and boosting customer confidence.</p>
+        </div>
+    </div>
+    <div class="pl-9">
+        <h2 class="text-3xl md:text-4xl pb-4">A Long-Term Partnership</h2>
+        <div class="text-base">
+        <p class="pb-4">The collaboration between DANIRAS and Anycubic has established Anycubic in the Danish market and created a lasting partnership to drive growth in the Nordic region. Together, they have built a foundation for Anycubic's expansion and innovative offerings while opening new opportunities for DANIRAS in technology and logistics.
+        </p>
+        <p>With this strong alliance, both companies aim to sustain growth and innovation. DANIRAS will support Anycubic's continued expansion in the Danish and Nordic markets, ensuring efficient operations. This partnership highlights how strategic alliances can drive value, growth, and sustainability across industries and regions.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- sektion 7 -->
+
+<Carousel header="Other Cases"/>
+
+</MainLayout>
+
+<style>
+    img{
+    border-radius: 8px;
+    box-shadow: 0px 4px 40px var(--opacity40-dark-blue);
+    }
+    .border{
+    border-bottom: 1px solid var(--opacity40-dark-blue);
+    }
+    .link:hover{
+    border-bottom: 1px solid var(--dark-brown);
+    transition: 0.15s;
+    }
+
+    h1 h2{
+    color:var(--dark-brown);
+    }
+
+    p{
+    color:var(--brown);
+    }
+</style>

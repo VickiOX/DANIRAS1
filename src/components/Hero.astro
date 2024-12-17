@@ -2,8 +2,17 @@
 import Button from "./Button.astro";
 ---
 <!-- This is the hero section -->
-<section class="bg-[url('/img/screen.webp')] text-center items-center text-white p-14 md:p-20 md:h-[700px]  flex-col flex justify-center ">
-    <h1 class="pb-12 text-5xl ">Unlock Tailored Solutions with DANIRAS</h1>
-    <p class="pb-14">We deliver customized services designed to meet your unique needs. Experience quality, innovation, and excellence in every project we undertake.</p>
-    <Button variant="primary" size="small">View Our Serivces</Button>
+<section class="bg-[url('/img/screen.webp')] text-center items-center p-14 md:p-20 md:h-[600px]  flex-col flex justify-center ">
+    <h1 class="pb-12 text-6xl md:text-7xl md:w-[800px] font-[Gabarito]">Unlock Tailored Solutions with DANIRASS</h1>
+    <p class="pb-14 md:w-[700px] font-[DM_Sans]"> We deliver customized services and solutions designed to meet your unique needs. Experience quality, innovation, and excellence in every project we undertake.</p>
+    <a href="/ourservices">
+    <Button variant="secondary" size="large">View Our Serivces</Button>
+    </a>
 </section>
+
+<style>
+    section{
+        color:var(--white);
+    }
+
+</style>

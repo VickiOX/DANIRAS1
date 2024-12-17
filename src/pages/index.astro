@@ -1,37 +1,74 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
-import List from '../components/List.astro';
 import Picture from "../components/Picture.astro";
 import Quote from "../components/Quote.astro";
 import Showcase from "../components/Showcase.astro";
 import InfoBox from "../components/InfoBox.astro";
-import Carousel from "../components/Carousel.astro";
+import employee from "../assets/images/employee.png";
 import Hero from "../components/Hero.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Partners from "../components/Partners.astro";
+import Services from "../components/Services.astro";
+import Image from "astro/components/Image.astro";
+
+const viewSet1 = [
+  "/img/anycubic_logo.png",
+  "/img/CFLY.png",
+  "/img/JJRIC.png",
+  "/img/MOFT.png",
+];
+
+const viewSet2 = [
+  "/img/Zeelot.png",
+  "/img/OMRON.png",
+  "/img/PITAKA.png",
+  "/img/SwellPro.png",
+];
+
 
 ---
 <MainLayout title="DANIRAS">
 	<article class="">
 		<Hero/>
-		
-		<div class="my-20">
-		<Picture picture="/img/employee.png" alt="big picture" text="Linda, Head of IT"/>
-		</div>
-		<div class="m-14">
-		<List subheader="Headline" text="brødtekst"/>
-		<List subheader="Headline" text="brødtekst"/>
-		<List subheader="Headline" text="brødtekst"/>
-		<List subheader="Headline" text="brødtekst"/>
-		</div>
+		<Partners
+		viewImagesSet1={viewSet1}
+		viewImagesSet2={viewSet2} />
 
-		<div class="bg-black text-white ">
-		<Quote header="I hope that all young people will have the opportunity to work for a company like Daniras...." subheader="Markus, Student with responsibilities in IT development " text="Learn more about us on ‘About us’ and hear more about Markus, who is a Student with responsibilities in IT, development, and operations, along with other colleagues."/>
+		<Showcase 
+		picture="/img/anycubic.webp" 
+		alt="big picture" 
+		header="Collaboration with Anycubic Nordic" 
+		text="Dive into inspiring stories about our partnership with Anycubic Nordic. Discover how we have created innovative solutions together, delivering quality in 3D printing that makes a difference for both professional and private users in the Nordic market."/>
+
+		<InfoBox 
+		header="Partnership"
+		header2="Company"
+		header3="Smarter"
+		text="We have assessed more than 50 different companies over the years."
+		text2="New Delivery Routes Optimized for Cost and Sustainability Across the Nordics."
+		text3="Daniras and Abycubic Nordic streamline logistics by cutting inefficiencies by 50%."/>	
+
+		<div class=" text-[#291F1E] md:p-20">
+			<Quote 
+			header="I hope that all young people will have the opportunity to work for a company like Daniras...." 
+			subheader="Markus, Student with responsibilities in IT development " 
+			text="Learn more about us on ‘About us’ and hear more about Markus, who is a Student with responsibilities in IT, development, and operations, along with other colleagues."
+			link="/aboutus"
+			variant="tertiary"
+			/>
 		</div>
-		<Quote header="I hope that all young people will have the opportunity to work for a company like Daniras...." subheader="Markus, Student with responsibilities in IT development " text="Learn more about us on ‘About us’ and hear more about Markus, who is a Student with responsibilities in IT, development, and operations, along with other colleagues."/>
-		<Showcase picture="/img/anycubic.webp" alt="big picture" header="Collaboration with Anycubic Nordic" text="Dive into inspiring stories about our partnership with Anycubic Nordic. Discover how we have created innovative solutions together, delivering quality in 3D printing that makes a difference for both professional and private users in the Nordic market."/>
-		<Carousel/>
-		<InfoBox/>
+		<ContactForm/>
 	</article>
 </MainLayout>
-<style></style>
+<style>
+	img{
+        border-radius: 8px;
+        box-shadow: 0px 4px 40px var(--opacity40-dark-blue);
+    }
+</style>
 <script src="../js/login.js"></script>
+
+
+
+

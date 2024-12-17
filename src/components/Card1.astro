@@ -1,0 +1,30 @@
+---
+const {headlinetext,imgDescription, img} = Astro.props
+---
+
+
+<div class="hidden md:block col md:h-[600px]">
+    <div class="card p-14">
+        <div class="h-[360px]">
+        <img class="object-cover h-full w-full color-overlay" src={img} alt={imgDescription}>
+        </div>
+        <p class="pt-6 text-base font-[DM_Sans]">{headlinetext}</p>
+    </div>
+</div>
+
+
+<style>
+    .card{
+        background-color: var(--brown);
+        color:var(--white);
+        border-radius: 8px;
+        box-shadow: 0 4px 40px var(--opacity40-dark-blue);
+        height: 100%;
+    }
+
+    img{
+        border-radius: 8px;
+        background-color: var(--opacity40-dark-blue);
+    }
+</style>
+

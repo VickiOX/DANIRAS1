@@ -1,0 +1,152 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import List from "../components/List.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Showcase from "../components/Showcase.astro";
+import InfoBox from "../components/InfoBox.astro";
+import Quote from "../components/Quote.astro";
+import Picture from "astro/components/Picture.astro";
+import employee from "../assets/images/employee.png";
+---
+<MainLayout title="DANIRAS | About Us">
+
+<!-- Sektion 1 -->
+
+<section>
+    <ul class="flex my-14 mx-9 md:m-20 gap-2 font-[DM_Sans] text-base md:text-sm">
+        <li><a class="link" href="../">Home</a></li>
+        <span>|</span>
+        <li><a class="link" href="/aboutus">About Us</a></li>
+    </ul>
+
+    <div class="md:grid md:grid-cols-2">
+    <div class=" my-14 mx-9 md:m-20">
+    <h1 class="text-5xl md:text-6xl pb-4  font-[Gabarito]">About Us: Discover DANIRAS and Our Commitment to Excellence</h1>
+    <p class="pb-9 font-[DM_Sans] text-base">Daniras is a company offering innovative solutions in consumer electronics, IT management, software development, and logistics. We partner with global brands to drive growth and efficiency, combining local expertise with global experience for tailored success.</p>
+    <div class="w-fit">
+        <a href="/aboutus#contactform"><Button variant="secondary" size="medium">Contact</Button></a>
+    </div>
+    </div>
+    <div><!--tom div --></div>
+    </div>
+
+</section>
+
+ <!-- sektion 2 -->
+
+<Showcase 
+picture="/img/anycubic.webp" 
+alt="big picture" 
+header="Collaboration with Anycubic Nordic" 
+text="Dive into inspiring stories about our partnership with Anycubic Nordic. Discover how we have created innovative solutions together, delivering quality in 3D printing that makes a difference for both professional and private users in the Nordic market."/>
+
+<!--sektion 3 -->
+
+<section class="md:grid md:grid-cols-2 mx-9 my-14 md:m-20">
+    <div class="pr-9">
+        <h2 class="text-3xl md:text-4xl pb-4 font-[Gabarito]">About Daniras A/S</h2>
+        <div class="font-[DM_Sans] text-base">
+        <p class=" pb-4">Daniras A/S is a fast-growing company driven by energy and innovation. Starting with FMCG distribution, we quickly shifted to consumer electronics, addressing rising demand. We collaborate closely with principals, crafting strategies to boost product sales and visibility, ensuring brands thrive in competitive markets.</p>
+        <p class="pb-4 ">Our success stems from agility and identifying opportunities swiftly. Each year, we expand our portfolio through new partnerships and leverage established trade networks. Dedicated to continuous improvement, we embrace challenges to enhance our services.</p>
+        <p>Strong principal partnerships are central to our business. We align with their values, combining expertise to foster sustainable growth. At Daniras, global brands gain the visibility and success they deserve.</p>
+        </div>
+    </div>
+    <div class="pl-9">
+        <h2 class="text-3xl md:text-4xl pb-4 font-[Gabarito]">Our Team: Young, Energetic & Flexible</h2>
+        <div class="font-[DM_Sans] text-base">
+        <p class="pb-4">At Daniras, we prioritize a motivated and dedicated team, reflected in our culture of inclusivity and growth. Our young, ambitious team members bring fresh energy and ideas to the workplace.</p>
+        <p class="pb-4">Sonny, a 24-year-old in IT, development, and operations, shares, “The work environment is relaxed and positive. I appreciate the flexibility, task management freedom, and support from Rasmus when needed. The company values my contributions and provides opportunities for skill development.”</p>
+        <p class="pb-4">Markus, another IT student, says, “In two years here, I’ve grown a lot. Even as a younger member, I’ve had real responsibilities. The flat hierarchy encourages communication and collaboration, making it a great place to learn and develop. Management is supportive, and our work is valued.”</p>
+        <p>At Daniras, our flat hierarchy and flexible structure empower everyone, regardless of experience, to take initiative, contribute meaningfully, and thrive.</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- sektion 4 -->
+    <InfoBox 
+    header="Partnership"
+    header2="Company"
+    header3="Smarter"
+    text="We have assessed more than 50 different companies over the years."
+    text2="New Delivery Routes Optimized for Cost and Sustainability Across the Nordics."
+    text3="Daniras and Abycubic Nordic streamline logistics by cutting inefficiencies by 50%."/>
+
+    <!-- sektion 5 -->
+    <section class=" text-[#291F1E] md:p-20">
+		<Quote 
+		header="I hope that all young people will have the opportunity to work for a company like Daniras...." 
+		subheader="Markus, Student with responsibilities in IT development " 
+		text="Learn more about us on ‘About us’ and hear more about Markus, who is a Student with responsibilities in IT, development, and operations, along with other colleagues."
+		link="/aboutus"
+		variant="tertiary"
+		/>
+    </section>
+
+    <!--sektion 6 -->
+
+    <section class="m-9 md:m-20">
+		<h2 class=" text-3xl md:text-5xl font-[Gabarito]">Values</h2>
+		<div class="md:grid md:grid-cols-2 text-base">
+		<List subheader="Agile" text="In an ever-changing world, we understand the critical importance of agility in business.Operating in a market that evolves annually, we prioritize flexibility and adaptability to stay ahead."/>
+		<List subheader="Strategic Expansion" text="Every success is built on a solid plan. That's why we focus on establishing key partnerships that help us understand and seamlessly enter new markets."/>
+		<List subheader="Innovative" text="We are constantly seeking new tools and technologies to integrate into our work, with a particular focus on AI in recent years."/>
+		<List subheader="People" text="Our team is composed of individuals with diverse backgrounds, ensuring the best problem-solving approaches and fostering innovative ideas."/>
+		<List subheader="Grounded" text="As a business, we prioritize meeting our partners and customers at their level to ensure mutually satisfactory outcomes. Respecting people is paramount to us."/>
+		<List subheader="Branding" text="We know the challenges some companies have in regards to brand on nordicv markets, which is why we help key partners with their branding and marketing in the nordic countires."/>
+		</div>
+	</section>
+
+    <!--sektion 7 -->
+   
+    <section class="m-9 md:m-20 ">
+    <Picture
+        src={employee}
+        alt="picture of employee"
+        class=" mx-auto img"
+        />
+        <p class="text-[16px] pt-[10px] font-[DM_Sans]">Linda, Head of IT</p>
+    </section>
+     
+
+    <!-- sektion 8 -->
+<section class="md:grid md:grid-cols-2 mx-9 my-14 md:m-20">
+    <div class="pr-9">
+        <h2 class="text-3xl md:text-4xl pb-4 font-[Gabarito]">Logistics and Scalability</h2>
+        <div class="font-[DM_Sans] text-base">
+        <p class="pb-4">At Daniras, efficient logistics drive customer satisfaction and business growth. Our advanced logistics center in Taastrup supports seamless B2B and B2C operations, including inbound deliveries, outbound orders, drop shipping, and webshop fulfillment.</p>
+        <p>Designed for scalability, our system adapts quickly to evolving customer needs, enabling rapid product assortment expansion. Alongside our central Danish warehouse, local facilities in Norway ensure fast, reliable direct-to-consumer and wholesale deliveries, creating a robust and agile regional network.</p>
+        </div>
+    </div>
+    <div class="pl-9">
+        <h2 class="text-3xl md:text-4xl pb-4 font-[Gabarito]">Sales, Support and Innovation</h2>
+        <div class="font-[DM_Sans] text-base">
+        <p class="pb-4">At Daniras, our sales team drives growth by showcasing our diverse catalog and building strong relationships across markets. We tailor strategies to give each brand the exposure it needs, focusing on nurturing existing clients while attracting new ones.</p>
+        <p class="pb-4">We provide excellent customer support, with a dedicated team responding to inquiries within 1-2 weeks to ensure clear communication and strong partnerships.</p>
+        <p>Our success stems from innovation and collaboration. By launching new partnerships and adapting to trends, we expand our reach annually. Partnering with suppliers and customers, we explore opportunities and ensure every brand's success through technology, logistics, and sales channels.</p>
+        </div>
+    </div>
+    </section>
+    <ContactForm/>
+
+</MainLayout>
+
+<style>
+    .link:hover{
+    border-bottom: 1px solid var(--dark-brown);
+    transition: 0.15s;
+    }
+
+    p{
+        color:var(--brown);
+    }
+    h1 h2{
+        color:var(--dark-brown);
+    }
+
+    img{
+        border-radius: 8px;
+        box-shadow: 0px 4px 40px var(--opacity40-dark-blue);
+    }
+
+</style>

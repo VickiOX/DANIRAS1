@@ -1,8 +1,8 @@
 ---
 import Button from '../components/Button.astro';
 ---
-
-<div x-data="{ showmenu: false }" class="sticky md:static w-full z-50 border ">
+<!-- desktop menu -->
+<div x-data="{ showmenu: false }" class="sticky md:static w-full z-50 border font-[DM_Sans] text-base">
 
   <div id="navbar" class="flex flex-row justify-between ">
     <a href="/">
@@ -12,18 +12,19 @@ import Button from '../components/Button.astro';
     <nav id="desktopmenu" class="hidden md:block">
       <ul class="flex flex-row gap-9 items-baseline m-9 ">
 
-        <li class="link "><a href="/#">Our Services</a></li>
+        <li class="link "><a href="/ourservices">Our Services</a></li>
 
-        <li class="link"><a href="#">Cases</a></li>
+        <li class="link"><a href="/cases">Cases</a></li>
 
-        <li class="link"><a href="#">About Us</a></li>
-        <li><a href="#">
+        <li class="link"><a href="/aboutus">About Us</a></li>
+        <li><a href="https://daniras.com/contact" target="_blank">
           <Button variant="primary" size="small">Contact</Button> 
         </a></li>
       </ul>
     </nav>
 
-    <button id="burgermenu" class="md:hidden" x-on:click="showmenu = !showmenu">
+<!-- mobil menu -->
+    <button id="burgermenu" class="md:hidden mr-9 font-[DM_Sans] color" x-on:click="showmenu = !showmenu">
       <svg x-show="!showmenu" class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
@@ -33,18 +34,18 @@ import Button from '../components/Button.astro';
     </button>
   </div>
 
-  <nav id="mobilmenu" class="flex flex-col content-center pt-4 md:hidden h-screen" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
+  <nav id="mobilmenu" class="flex flex-col content-center pt-4 md:hidden h-screen font-[DM_Sans] text-xl" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
     <ul class="pt-9 pl-18 ">
 
-      <li class="link"><a href="#">Our Services</a></li>
+      <li class="link w-fit"><a href="/ourservices">Our Services</a></li>
 
-      <li class="link pt-9"><a href="#">Cases</a></li>
+      <li class="link w-fit pt-9"><a href="/cases">Cases</a></li>
 
-      <li class="link pt-9"><a href="#">About Us</a></li>
+      <li class="link w-fit pt-9"><a href="/aboutus">About Us</a></li>
      
-      <li class="link pt-9"><a href="#">Career</a></li>
+      <li class="link w-fit pt-9"><a href="https://daniras.com/job-openings1/index" target="_blank">Career</a></li>
 
-      <li class="link pt-9"><a href="#">Contact</a></li>
+      <li class="link w-fit pt-9"><a href="https://daniras.com/contact" target="_blank">Contact</a></li>
     </ul>
   </nav>
 </div>
@@ -63,21 +64,12 @@ import Button from '../components/Button.astro';
     transition: 0.15s;
 }
 
+.color{
+  color: var(--dark-brown);
+}
+
+li{
+  color: var(--brown);
+}
+
 </style>
-
-<script>
-     import { animate, inView, scroll } from "motion";
-
-//fadeInLeft
-//________________________
-//section 3
-const fadeIn1 = document.querySelector(".fadeIn1");
-
-inView(fadeIn1, () => {
-  fadeIn1.classList.add(
-    "animate__animated",
-    "animate__fadeIn",
-    "animate__delay-1s"
-  );
-});
-</script>

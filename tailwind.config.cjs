@@ -53,8 +53,8 @@ module.exports = {
 
     extend:{
       fontFamily:{
-        display:['Gabarito','sans-serif'], //Add font as font-display
-        body:['DM Sans','sans-serif'], // Add font as font-body
+        Gabarito:['Gabarito','sans-serif'], //Add font as font-display
+        DM_Sans:['DM Sans','sans-serif'], // Add font as font-body
       }
     },
 

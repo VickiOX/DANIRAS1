@@ -1,27 +1,114 @@
 ---
-import "../styles/style.css"
-import "../styles/animation.css"
+import "../styles/style.css";
+import "../styles/animation.css";
+const { header, header2, header3, text, text2, text3 } = Astro.props;
+
 ---
 
-https://css-tricks.com/animating-number-counters/
-https://www.youtube.com/watch?v=ulcVQt-a7c8 
-https://gsap.com/community/forums/topic/26886-number-counter-animation-in-gsap-3x-and-adding-decimal-separators-to-the-number/ 
-<!-- This is the infobox with a headline, div, number and paragraph -->
-
-<article>
-    <div>
-        <h2>Headline</h2>
-        <div class="box">
-            <div class="number"></div>
-            <p>brødtekst</p>
-        </div>
+<section class="container mx-auto md:mx-20 py-12">
+    <div class="card-container containerbackground p-6 rounded-lg md:grid md:grid-cols-3 gap-4 transition duration-300">
+    <!-- Card 1 -->
+    <div class="card-wrapper">
+        <h2 class="text-xl mb-4 font-[Gabarito]">{header}</h2>
+    <div class="card-container h-[450px] content-center background p-6 rounded-lg shadow-md text-center">
+      <div class="text-5xl font-bold color" data-target="50">
+        <span>0</span>
+      </div>
+      <p class="mt-4 px-6 md:px-14 font-[DM_Sans] text-sm">{text}</p> <!-- We have assessed more than 50 different companies over the years. -->
+    </div>
     </div>
 
-</article>
+    <!-- Card 2 -->
+     <div class="card-wrapper">
+    <h2 class="text-xl mb-4 font-[Gabarito]">{header2}</h2>
+    <div class="card-container h-[450px] content-center background p-6 rounded-lg shadow-md text-center">
+      <div class="text-5xl font-bold color" data-target="75">0</div>
+      <p class="mt-4  px-6 md:px-14 font-[DM_Sans] text-sm">{text2}</p> <!--We have assessed more than 75 different companies over the years. -->
+    </div>
+    </div>
 
-<style>       
-    .box{
-        background-color: var(--lighter-blue);
-      }
-    
+    <!-- Card 3 -->
+    <div class="card-wrapper">
+        <h2 class="text-xl mb-4 font-[Gabarito]">{header3}</h2>
+    <div class="card-container h-[450px] content-center background p-6 rounded-lg shadow-md text-center">
+      <div class="text-5xl font-bold color" data-target="50">
+        <span>0</span>
+      </div>
+      <p class="mt-4 px-6 md:px-14 font-[DM_Sans] text-sm">{text3}</p> <!-- We have assessed more than 50 different companies over the years. -->
+    </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .background{
+    background-color:var(--lighter-blue);
+    box-shadow: 0px 4px 40px var(--opacity10-dark-blue);
+  }
+  p {
+    color:var(--brown);
+  }
+
+  .color h2{
+    color: var(--dark-brown);
+  }
+
+  .containerbackground{
+    background-color: var(--white);
+  }
+
+  
 </style>
+
+
+
+  <script>
+    
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.container') as HTMLElement; // Select the parent container
+  const counters = container.querySelectorAll('.text-5xl'); // Select all counters inside the container
+  const speed = 50; // Adjust speed for animation
+  let intervals: number[] = []; // Store intervals for all counters
+
+  // Function to start counting
+  const startCounting = () => {
+    counters.forEach(counter => {
+      if (counter instanceof HTMLElement) { // Check that counter is an HTMLElement
+        const target = +counter.getAttribute('data-target')!;
+        let count = 0;
+
+        const interval = setInterval(() => {
+          if (count < target) {
+            count++;
+            counter.innerText = count.toString();
+          } else {
+            clearInterval(interval); // Stop updating once the target is reached
+          }
+        }, speed / target);
+
+        intervals.push(interval); // Store interval for later clearing
+      }
+    });
+  };
+
+  // Function to reset all counters
+  const resetCounting = () => {
+    intervals.forEach(interval => clearInterval(interval)); // Clear all intervals
+    intervals = []; // Reset intervals array
+    counters.forEach(counter => {
+      if (counter instanceof HTMLElement) { // Ensure counter is an HTMLElement
+        counter.innerText = '0'; // Reset to zero
+      }
+    });
+  };
+
+  // Attach event listeners to the container
+  container.addEventListener('mouseenter', startCounting);
+  container.addEventListener('dragenter', startCounting);
+  container.addEventListener('mouseleave', resetCounting);
+  container.addEventListener('dragleave', resetCounting);
+});
+
+
+  </script>

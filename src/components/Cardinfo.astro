@@ -1,0 +1,331 @@
+---
+import Button from './Button.astro';
+
+const {text,packageheadline,
+infotext1,infotext2, infotext3, infotext4, infotext5, infotext6, 
+popuptext1, popuptext1_2, popuptext1_3, popuptext1_4, popuptext1_5, popuptext1_6, 
+popuptext2, popuptext2_2, popuptext2_3, popuptext2_4, popuptext2_5, popuptext2_6, 
+popuptext3,  popuptext3_2, popuptext3_3, popuptext3_4, popuptext3_5, popuptext3_6, 
+popuptext4, popuptext4_2, popuptext4_3, popuptext4_4, popuptext4_5, popuptext4_6, 
+popuptext5, popuptext5_2, popuptext5_3, popuptext5_4, popuptext5_5, popuptext5_6, 
+popuptext6, popuptext6_2, popuptext6_3, popuptext6_4, popuptext6_5, popuptext6_6, 
+} = Astro.props;
+---
+
+
+<div class="col card2 p-14  md:h-[600px]">
+    <h2 class="text-2xl md:text-4xl font-[Gabarito]">{packageheadline}</h2>
+    <p class="pt-6 md:pb-8 font-[DM_Sans]">{text}</p>
+
+<div class="mb-14 md:mb-[0px] font-[DM_Sans]">
+    <div class="flex justify-between pb-3">
+    <!-- chechmark -->
+    <div class="flex gap-6">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-10 h-10 color">
+    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+    </svg>
+    <p>{infotext1}</p>
+    </div>
+    <div class="list hidden md:block">
+        <div class="list-item" x-data="{ showPopup: false }">
+            <div class="icon"></div>
+            <div class="icon">
+             <!-- questionmark -->
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 imgicon mb-8"  @click="showPopup = !showPopup">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+          </svg>
+              <div
+                class="popup"
+                :class="{ 'visible': showPopup }"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+              >
+              <!-- text til popup -->
+                <p class="font-[DM_Sans] text-base text">{popuptext1} <br> {popuptext1_2}<br>{popuptext1_3}<br> {popuptext1_4} <br> {popuptext1_5} <br> {popuptext1_6} </p>
+              </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <div class="flex justify-between pb-3">
+    <!-- chechmark -->
+    <div class="flex gap-6">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-10 h-10 color">
+    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+    </svg>
+    <p>{infotext2}</p>
+    </div>
+    <div class="list hidden md:block">
+        <div class="list-item" x-data="{ showPopup: false }">
+            <div class="icon"></div>
+            <div class="icon">
+             <!-- questionmark -->
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 imgicon mb-8"  @click="showPopup = !showPopup">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+          </svg>
+              <div
+                class="popup"
+                :class="{ 'visible': showPopup }"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+              >
+              <!-- text til popup -->
+              <p class="font-[DM_Sans] text-base text">{popuptext2} <br> {popuptext2_2}<br>{popuptext2_3}<br> {popuptext2_4} <br> {popuptext2_5} <br> {popuptext2_6} </p>
+            </div>
+         </div>
+    </div>
+    </div>
+    </div>
+    
+
+    <div class="flex justify-between pb-3">
+    <!-- chechmark -->
+    <div class="flex gap-6">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-10 h-10 color">
+    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+    </svg>
+    <p>{infotext3}</p>
+    </div>
+    <div class="list hidden md:block">
+        <div class="list-item" x-data="{ showPopup: false }">
+            <div class="icon"></div>
+            <div class="icon">
+             <!-- questionmark -->
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 imgicon mb-8"  @click="showPopup = !showPopup">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+          </svg>
+              <div
+                class="popup"
+                :class="{ 'visible': showPopup }"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+              >
+              <!-- text til popup -->
+              <p class="font-[DM_Sans] text-base text">{popuptext3} <br> {popuptext3_2}<br>{popuptext3_3}<br> {popuptext3_4} <br> {popuptext3_5} <br> {popuptext3_6} </p>
+            </div>
+         </div>
+    </div> 
+    </div>
+    </div>
+
+
+    <div class="flex justify-between pb-3">
+    <!-- chechmark -->
+    <div class="flex gap-6">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-10 h-10 color">
+    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+    </svg>
+    <p>{infotext4}</p>
+    </div>
+    <div class="list hidden md:block">
+        <div class="list-item" x-data="{ showPopup: false }">
+            <div class="icon"></div>
+            <div class="icon">
+             <!-- questionmark -->
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 imgicon mb-8"  @click="showPopup = !showPopup">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+          </svg>
+              <div
+                class="popup"
+                :class="{ 'visible': showPopup }"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+              >
+              <!-- text til popup -->
+              <p class="font-[DM_Sans] text-base text">{popuptext4} <br> {popuptext4_2}<br>{popuptext4_3}<br> {popuptext4_4} <br> {popuptext4_5} <br> {popuptext4_6} </p>
+            </div>
+         </div>
+    </div>
+    </div>        
+    </div>
+
+
+    <div class="flex justify-between pb-3">
+    <!-- chechmark -->
+    <div class="flex gap-6 color">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-10 h-10 color">
+    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+    </svg>
+    <p>{infotext5}</p>
+    </div>
+    <div class="list hidden md:block">
+        <div class="list-item" x-data="{ showPopup: false }">
+            <div class="icon"></div>
+            <div class="icon">
+             <!-- questionmark -->
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 imgicon mb-8"  @click="showPopup = !showPopup">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+          </svg>
+              <div
+                class="popup"
+                :class="{ 'visible': showPopup }"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+              >
+              <!-- text til popup -->
+                <p class="font-[DM_Sans] text-base text">{popuptext5} <br> {popuptext5_2}<br>{popuptext5_3}<br> {popuptext5_4} <br> {popuptext5_5} <br> {popuptext5_6} </p>
+            </div>
+         </div>
+    </div>  
+    </div>           
+    </div>
+
+
+    <div class="flex justify-between pb-3">
+    <!-- chechmark -->
+    <div class="flex gap-6">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-10 h-10 color">
+    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+    </svg>
+    <p>{infotext6}</p>
+    </div>
+    <div class="list hidden md:block">
+        <div class="list-item" x-data="{ showPopup: false }">
+            <div class="icon"></div>
+            <div class="icon">
+             <!-- questionmark -->
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 imgicon mb-8"  @click="showPopup = !showPopup">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+          </svg>
+              <div
+                class="popup"
+                :class="{ 'visible': showPopup }"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+              >
+              <!-- text til popup -->
+              <p class="font-[DM_Sans] text-base text">{popuptext6} <br> {popuptext6_2}<br>{popuptext6_3}<br> {popuptext6_4} <br> {popuptext6_5} <br> {popuptext6_6} </p>
+            </div>
+         </div>
+    </div> 
+    </div>   
+    </div>
+
+</div>
+        <a class= href="/ourservices#contactform">
+            <Button variant="primary" size="medium">View Our Serivces</Button>  
+        </a>
+</div>
+
+        
+  
+
+<style>
+    img{
+        border-radius: 8px;
+    }
+
+    .card2{
+        border-radius: 8px;
+        background-color: var(--white);
+        box-shadow: 0 4px 40px var(--opacity40-dark-blue);
+        width: 100%;
+    }
+    p{
+        color: var(--brown);
+        font-size: 16px;
+    }
+
+    h2{
+        color:var(--dark-brown);
+    }
+    .color{
+        color: var(--brown);
+    }
+
+
+
+    /*popup*/
+    .text{
+        color: var(--white);
+      }
+        .list-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+        font-family: Arial, sans-serif;
+        color: var(--white);
+      }
+
+      .list-item .text {
+        flex-grow: 1;
+        padding: 0 10px;
+      }
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        color: var(--brown);
+        position: relative;
+      }
+
+      .popup {
+        position: absolute;
+        bottom: 130%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--brown);
+        color: var(--white);
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-size: 0.9em;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      .popup.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .imgicon {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        border-radius: 50%;
+        /*border: 2px solid #007BFF; /* Blue border */
+      }
+
+</style>
+
+
+  
+  
+
+  
+  

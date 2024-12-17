@@ -1,21 +1,166 @@
 ---
-import CarouselCard from "./CarouselCard.astro";
-const { imgDescription, img, text} = Astro.props
+const { header} = Astro.props;
+
 ---
 
-<!-- this carousel show other cases -->
+<section class=" flex justify-center items-center h-screen ">
+    <div class="w-full px-4">
+        <div class=" justify-between flex">
+        <h2 class="text-4xl mb-4 text-left md:mx-20 font-[Gabarito]">{header}</h2>
 
-<div class="container">
-    <div class="card-wrapper">
-        <ul class="card-list">
+        <div class="buttons flex gap-4 md:mr-20 mt-8">
+             <!-- Left button -->
+             
+              <svg xmlns="http://www.w3.org/2000/svg" id="leftButton"  fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6  top-1/2 left-2 transform -translate-y-1/2 roundButtom w-12 h-12 p-2 rounded-full flex justify-center items-center shadow-xl hover:scale-110 hover:shadow-2xl transition-all z-10" onclick="moveCarousel(-1)">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+              </svg>
+              
 
-            <li class="card-item">
-                <a href="#" class="card-link">
-                    <img src={img} alt={imgDescription} class="card-img">
-                    <p class="describtion">{text}</p>
+            <!-- Right button -->
+            <svg xmlns="http://www.w3.org/2000/svg" id="rightButton" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6 top-1/2 left-2 transform -translate-y-1/2 roundButtom w-12 h-12 p-2 rounded-full flex justify-center items-center shadow-xl hover:scale-110 hover:shadow-2xl transition-all z-10" onclick="moveCarousel(1)">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg> 
+        </div>
+        </div>
+        <div class="relative w-full overflow-hidden mx-auto font-[DM_Sans]">
+            <div id="carouselTrack" class="flex transition-transform duration-500 md:ml-20">
+             
+              <a href="/cases" target="_blank">
+              <div class="carousel-card flex-shrink-0 w-[400px] h-[400px] background p-4 mx-2 rounded-lg flex flex-col items-center justify-center text-center">
+                <img src="/img/Anycubic_logo.webp" alt="Logo 1" class="mb-4" />
+                <p class=" text-sm">Read about Anycubic Nordic and Daniras partnership as they bring cutting-edge 3D printing and technology solutions to life.</p>
+              </div>
+              </a>
+
+              <a href="/cases" target="_blank">
+                <div class="carousel-card flex-shrink-0 w-[400px] h-[400px] background p-4 mx-2 rounded-lg flex flex-col items-center justify-center text-center">
+                  <img src="/img/Anycubic_logo.webp" alt="Logo 1" class="mb-4" />
+                  <p class=" text-sm">Read about Anycubic Nordic and Daniras partnership as they bring cutting-edge 3D printing and technology solutions to life.</p>
+                </div>
                 </a>
-            </li>
 
-        </ul>
+                <a href="/cases" target="_blank">
+                  <div class="carousel-card flex-shrink-0 w-[400px] h-[400px] background p-4 mx-2 rounded-lg flex flex-col items-center justify-center text-center">
+                    <img src="/img/Anycubic_logo.webp" alt="Logo 1" class="mb-4" />
+                    <p class=" text-sm">Read about Anycubic Nordic and Daniras partnership as they bring cutting-edge 3D printing and technology solutions to life.</p>
+                  </div>
+                  </a>
+
+               <a href="/cases" target="_blank">
+              <div class="carousel-card flex-shrink-0 w-[400px] h-[400px] background p-4 mx-2 rounded-lg flex flex-col items-center justify-center text-center">
+                <img src="/img/Anycubic_logo.webp" alt="Logo 1" class="mb-4" />
+                <p class=" text-sm">Read about Anycubic Nordic and Daniras partnership as they bring cutting-edge 3D printing and technology solutions to life.</p>
+              </div>
+              </a>
+
+               <a href="/cases" target="_blank">
+              <div class="carousel-card flex-shrink-0 w-[400px] h-[400px] background p-4 mx-2 rounded-lg flex flex-col items-center justify-center text-center">
+                <img src="/img/Anycubic_logo.webp" alt="Logo 1" class="mb-4" />
+                <p class=" text-sm">Read about Anycubic Nordic and Daniras partnership as they bring cutting-edge 3D printing and technology solutions to life.</p>
+              </div>
+              </a>
+              
+            </div>
+
+          </div>
     </div>
-</div>
+
+    <style>
+      .roundButtom{
+        background-color: var(--red);
+        color:var(--white);
+        box-shadow: 0 4px 40px var(--opacity40-dark-blue:);
+      }
+      .background{
+        background-color:var(--lighter-blue);
+        box-shadow: 0 4px 40px var(--opacity10-dark-blue:);
+      }
+
+      .background:hover{
+        box-shadow: 0px 8px 40px var(--opacity10-dark-blue);
+      }
+      .roundButtom:hover{
+        box-shadow: 0px 8px 40px var(--opacity40-dark-blue);
+      }
+      p{
+        color: var(--brown);
+      }
+      h2{
+        color: var(--dark-brown);
+      }
+
+    section{
+      background-color: var(--white);
+    }
+    </style>
+
+
+        <script>
+          setupCarousel();
+
+            function setupCarousel() {
+            throw new Error("Function not implemented.");
+            }
+        </script>
+  </section>
+
+<script>
+declare global {
+  interface Window {
+    moveCarousel: (direction: number) => void;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupCarousel();
+});
+
+function setupCarousel() {
+  let currentIndex = 0;
+  const track = document.getElementById('carouselTrack');
+  const cards = Array.from(document.querySelectorAll('.carousel-card'));
+  const totalCards = cards.length;
+  const leftButton = document.getElementById('leftButton');
+  const rightButton = document.getElementById('rightButton');
+
+  const updateCarousel = () => {
+    const isMobile = window.innerWidth <= 768;
+    const cardWidth = isMobile ? 416 : 416; // 400px width + 16px margin
+    const visibleCards = isMobile ? 1 : 2.5;
+    const maxIndex = Math.max(totalCards - visibleCards, 0);
+
+    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+    // Ensure the index stays within bounds after resizing
+    if (currentIndex > maxIndex) {
+      currentIndex = maxIndex;
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+  };
+
+  const moveCarousel = (direction: number) => {
+    const isMobile = window.innerWidth <= 768;
+    const visibleCards = isMobile ? 1 : 2.5;
+    const maxIndex = Math.max(totalCards - visibleCards, 0);
+
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = 0;
+    else if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+    updateCarousel();
+  };
+
+  // Attach `moveCarousel` to the global scope
+  window.moveCarousel = moveCarousel;
+
+  // Update carousel on window resize
+  window.addEventListener('resize', updateCarousel);
+
+  // Initialize carousel
+  updateCarousel();
+}
+
+// Initialize carousel when page loads
+setupCarousel();
+
+</script>

@@ -2,14 +2,20 @@
 import "../styles/style.css"
 const { variant = "primary", size = "medium" } = Astro.props;
 
-const buttonStyling = "text-button";
+const buttonStyling = "text-button font-[DM_Sans] font-semibold";
 
 const variantClasses = {
   primary:
-    "button-primary  transition rounded-full",
+    "button-primary transition rounded-full w-full",
 
   secondary:
-    "bg-grey-300 text-white hover:bg-grey-200 transition duration-300 ease-in-out drop-shadow-lg border border-grey-100",
+    "button-secondary transition rounded-full w-full",
+
+  tertiary:
+    "button-tertiary transition rounded-full w-full",
+
+  quniary:
+  "button-quniary transition rounded-full w-full",
 };
 
 const sizeClasses = {
@@ -37,22 +43,27 @@ const sizeClasses = {
 .button-primary{
     background-color: var(--dark-brown);
 }
-
 .button-primary:hover{
   background-color: var(--blue);
 }
 
 .button-secondary{
-    background-color: var(--dark-blue);
-}
-
-.button-tertiary{
     background-color: var(--red);
 }
+.button-secondary:hover, .button-tertiary:hover {
+    background-color: var(--dark-brown);
+}
 
-.button-quniary{
+.button-tertiary, .button-quniary{
     background-color: var(--blue);
 }
+
+.button-quniary:hover{
+  background-color:var(--white);
+  color: var(--dark-brown);
+}
+
+
 
 /*button text*/
 .text-button{
@@ -60,3 +71,10 @@ const sizeClasses = {
 }
 
 </style>
+
+
+<!-- right arrow -->
+ <!-- 
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> -->

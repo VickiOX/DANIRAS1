@@ -1,27 +1,15 @@
 ---
-const {picture, alt, text} = Astro.props
+import { Image } from "astro:assets";
+import anycubic from "../assets/anycubic2.webp";
+import employee from "../assets/employee.png";
+
+
 ---
 <!-- this section is a big img -->
-<section>
-   <div class="flex-col items-center sticky top-[0px] md:h-screen w-screen bg-white">
-      <div class="p-[40px] md:p-[80px] box"> 
-         <img class=" mx-auto " src={picture} alt={alt}>
-         <p class="text-[16px] pt-[10px]">{text}</p>
-      </div>
-   </div>
-
-   <div class="flex-col items-center sticky top-[0px] md:h-screen w-screen bg-white">
-      <div class="p-[40px] md:p-[80px] box"> 
-         <img class=" mx-auto" src={picture} alt={alt}>
-         <p class="text-[16px] pt-[10px]">{text}</p>
+<section class="mx-6 ">
+   <div class="md:h-screen w-fit">
+      <div class="p-[40px] md:p-[80px]"> 
+         <slot />
       </div>
    </div>
 </section>
-
-
-<style>
-   .box{
-      border-top: 1px solid var(--opacity40-dark-blue);
-      border-bottom: 1px solid var(--opacity40-dark-blue);
-   }
-</style>

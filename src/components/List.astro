@@ -2,9 +2,9 @@
  const {subheader, text} = Astro.props
 ---
 <div class="p-2">
- <div class="p-9 md:p-14 box gap-6 md:grid md:grid-cols-2 ">
-    <div><h3>{subheader}</h3></div>
-    <div><p>{text}</p></div>
+ <div class="p-9 md:p-14 box gap-6 ">
+    <div><h3 class=" text-xl pb-4 md:pb-0 md:text-3xl font-[Gabarito]">{subheader}</h3></div>
+    <div><p class="font-[DM_Sans] text-base">{text}</p></div>
  </div>
 </div>
 
@@ -13,7 +13,14 @@
         background-color: var(--brown);
         color:var(--white);
         border-radius: 4px;
+        box-shadow: 0px 4px 40px var(--opacity10-dark-blue);
+        height:100%;
     }
+
+    .box:hover{
+        box-shadow: 0px 8px 40px var(--opacity40-dark-blue);
+    }
+
 
     @media screen and (min-width: 480px){
         .box{
