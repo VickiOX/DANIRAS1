@@ -3,7 +3,7 @@ import Button from "../components/Button.astro";
 ---
 
 <!-- This is the contact form -->
- <section class="md:grid md:grid-cols-2 m-9 md:m-20" id="contactform">
+ <section class="md:grid md:grid-cols-2 m-9 py-14 md:m-20" id="contactform">
     <div class="md:pr-9">
         <img class=" hidden md:block h-full object-cover" src="/img/employee2.webp" alt="">
     </div>
@@ -30,10 +30,10 @@ import Button from "../components/Button.astro";
 
             </div>
             <div class="flex items-start mb-10">
-              <div class="flex items-center mt-2 h-10">
+              <div class="flex items-center mt-10 h-10">
                 <input id="checked" type="checkbox" value="" class="w-10 h-10 border rounded-sm background dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
               </div>
-              <label class="mt-2 ml-2 text-sm">By submitting this form, you agree to our <span class=" cursor-pointer hover:underline text-sm">Terms of Use</span> and <span class="cursor-pointer hover:underline">Privacy Policy</span>.</label>
+              <label class="mt-9 ml-2 text-sm">By submitting this form, you agree to our <span class=" cursor-pointer hover:underline text-sm">Terms of Use</span> and <span class="cursor-pointer hover:underline">Privacy Policy</span>.</label>
             </div>
 
             <Button variant="secondary" size="medium">Submit</Button>

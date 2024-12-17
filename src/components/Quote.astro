@@ -3,11 +3,11 @@
  import Button from '../components/Button.astro';
 ---
 <div class="p-9 md:p-20">
-<div class=" p-9 md:p-20 text-center items-center">
+<div class=" py-9 md:p-20 text-center items-center">
     <h2 class=" text-4xl md:text-7xl md:pb-3 font-[Gabarito]">"{header}"</h2>
     <h3 class=" text-2xl md:text-4xl pb-4 md:pb-9 font-[Gabarito]">- {subheader}</h3>
     <p class="text-base mx-auto md:w-[660px] pb-6 md:pb-6 font-[DM_Sans]">{text}</p>
-    <div class="w-fit mx-auto">
+    <div class="w-fit mx-auto pb-14 md:pb-20">
     <a href={link}>
         <Button variant={variant} size="medium">Contact</Button> 
     </a>
